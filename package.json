@@ -1,0 +1,27 @@
+{
+  "name": "grunt-handlebars-min",
+  "version": "0.0.1",
+  "description": "Grunt task to minify Handlebars.js templates.",
+  "main": "handlebars-min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moodyroto/grunt-handlebars-min"
+  },
+  "keywords": [
+    "grunt",
+    "handlebars",
+    "minify"
+  ],
+  "author": "Moody's Analytics ECCA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moodyroto/grunt-handlebars-min/issues"
+  },
+  "homepage": "https://github.com/moodyroto/grunt-handlebars-min",
+  "devDependencies": {
+    "jasmine": "^2.0.1"
+  }
+}
