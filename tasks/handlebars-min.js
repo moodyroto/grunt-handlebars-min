@@ -8,7 +8,7 @@ module.exports = function(grunt){
 
     var minify = require("../handlebars-min.js");
 
-    grunt.registerMultiTask("handlebars-min", "Minify handlebars", function(){
+    grunt.registerMultiTask("handlebarsmin", "Minify handlebars", function(){
         var options = this.options();
  
         grunt.verbose.writeflags(options, "Options");
