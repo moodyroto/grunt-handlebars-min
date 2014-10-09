@@ -1,10 +1,10 @@
 {
   "name": "grunt-handlebars-min",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Grunt task to minify Handlebars.js templates.",
   "main": "handlebars-min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
