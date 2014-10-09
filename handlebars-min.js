@@ -2,7 +2,7 @@
 //  reduce output file size by a tiny amount.
 // known not to work for <pre> tags (as in, it disregards the pre) 
 //and for quoted text (as in, it disregards the quotes.)
-var min = function(input) {
+var min = function(input){
     "use strict";
 
     return input

@@ -1,11 +1,9 @@
 var mini = require("../handlebars-min.js");
 
 describe("handlebars template before-compilation minifier", function(){
-    it("should remove all whitespace greater than one character long", function(){        
-        
+    it("should remove all whitespace greater than one character long", function(){
         var input = "1 2  3   4    5     6";
-        expect( mini(input) ).toEqual("1 2 3 4 5 6");       
-
+        expect( mini(input) ).toEqual("1 2 3 4 5 6");
     });
 
     it("should not remove necessary white space from text", function(){
