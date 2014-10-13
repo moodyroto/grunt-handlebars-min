@@ -6,7 +6,11 @@
 module.exports = function(grunt){
     "use strict";
 
-    var minify = require("../handlebars-min.js");
+    var 
+        chalk = require("chalk"),
+        maxmin = require("maxmin"),
+        path = require("path"),
+        minify = require("../handlebars-min.js");
 
     grunt.registerMultiTask("handlebarsmin", "Minify handlebars", function(){
         var options = this.options();
@@ -14,24 +18,33 @@ module.exports = function(grunt){
         grunt.verbose.writeflags(options, "Options");
 
         this.files.forEach(function(file){
-            file.src.filter(function(filepath){
-                var fileName = filepath.substring(filepath.lastIndexOf("/") + 1, filepath.lastIndexOf("."));
+            var 
+                min, max,
+                dest = file.dest,
+                src = file.src[0];
 
-                // Warn on and remove invalid source files (if nonull was set).            
-                if (!grunt.file.exists(filepath)){
-                    grunt.log.warn("Source file '" + filepath + "' not found.");
-                    return false;
-                }else{
+            if (!grunt.file.exists(src)){
+                return grunt.log.warn("Source file " + chalk.cyan(filepath) + " not found.");
+            }
 
-                    try{
-                        grunt.file.write(file.dest + fileName + file.ext, minify(grunt.file.read(filepath)));
-                    }catch(err){
-                        grunt.warn(fileName + "\n" + err);
-                    }
+            max = grunt.file.read(src);
 
-                    return true;
-                }
-            });
+            if (max.length === 0){
+                grunt.log.warn("Destination " + chalk.cyan(src) + " not written because source file was empty.");
+            }
+
+            try{
+                min = minify(max);
+            }catch(err){
+                return grunt.warn(src + "\n" + err);
+            }
+
+            if (min.length === 0){
+                grunt.log.warn("Destination " + chalk.cyan(src) + " not written because there was nothing to minify.");
+            }
+
+            grunt.file.write(dest, min);
+            grunt.log.writeln("File " + chalk.cyan(dest) + " created: " + maxmin(max, min, options.report === "gzip"));
         });
     });
 };
