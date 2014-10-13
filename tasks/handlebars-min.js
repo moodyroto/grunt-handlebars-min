@@ -9,7 +9,6 @@ module.exports = function(grunt){
     var 
         chalk = require("chalk"),
         maxmin = require("maxmin"),
-        path = require("path"),
         minify = require("../handlebars-min.js");
 
     grunt.registerMultiTask("handlebarsmin", "Minify handlebars", function(){

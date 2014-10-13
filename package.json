@@ -23,5 +23,9 @@
   "homepage": "https://github.com/moodyroto/grunt-handlebars-min",
   "devDependencies": {
     "jasmine": "^2.0.1"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "maxmin": "^1.0.0"
   }
 }
