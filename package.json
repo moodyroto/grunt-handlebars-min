@@ -1,6 +1,6 @@
 {
   "name": "grunt-handlebars-min",
-  "version": "0.0.2",
+  "version": "0.3.0",
   "description": "Grunt task to minify Handlebars.js templates.",
   "main": "handlebars-min.js",
   "scripts": {
