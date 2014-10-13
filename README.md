@@ -1,6 +1,6 @@
 # grunt-handlebars-min
 
->A grunt task for minifying and removing whitepace from [Handlebars](http://handlebarsjs.com/) templates.
+>A grunt task for minifying and removing whitespace from [Handlebars](http://handlebarsjs.com/) templates.
 
 ## Getting Started
 
