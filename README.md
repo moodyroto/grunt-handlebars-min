@@ -22,16 +22,32 @@ grunt.loadNpmTasks("grunt-handlebars-min");
 
 _Run this task with the `grunt handlebarsmin` command._
 
-### Usage
+## Usage
 
 Use the `grunt-handlebarsmin` task by specifying a target source and a target destination and a destination extension.
+
+### Minify individual files
+
+```js
+"handlebarsmin": {
+    dist: {
+        files: {
+            "./min/div.handlebars": "./templates/div.handlebars",
+            "./min/table.handlebars": "./templates/table.template"
+        }
+    }
+}
+```
+
+### Minify all files in a directory
 
 ```js
 "handlebarsmin": {
     dist: {
         src: "./templates/handlebars/*.handlebars",
         dest: "./templates/min/",
-        ext: ".handlebars"
+        expand: true,
+        ext: ".handlebars" // optional
     }
 }
 ```
