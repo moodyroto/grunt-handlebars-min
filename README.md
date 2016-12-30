@@ -58,4 +58,4 @@ The `handlebars` task is a [multi task](https://github.com/gruntjs/grunt/blob/ma
 
 ## Contributing
 
-Feel free to fork if you see possible improvements, or contact me directly if you want to contribute to this project (or just submit a pull request).d
+Feel free to fork if you see possible improvements, or contact me directly if you want to contribute to this project (or just submit a pull request).
