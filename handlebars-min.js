@@ -22,6 +22,11 @@ var min = function(input){
         // that's bad. undo it.
         .replace(/{{2}>/gi, "{{> ")
 
+        //the previous removal may have turned {{!< layout}} into {{!<layout}}
+        // that's bad. undo it.
+        // https://github.com/barc/express-hbs
+        .replace(/{{2}!</gi, "{{!< ")
+
         //remove whitespace after the "<" of a tag
         .replace(/<[\s]/gi, "<");
 };

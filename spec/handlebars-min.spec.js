@@ -27,4 +27,9 @@ describe("handlebars template before-compilation minifier", function(){
         expect( mini(input) ).toEqual(input);
     });
 
+    it("shouldn't destroy layout", function(){
+        var input ="{{!< layout}}";
+        expect( mini(input) ).toEqual(input);
+    })
+
 });
